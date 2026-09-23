@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vue + Nuxt 技能樹</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  .site-nav, header, .tabs, .board { max-width: 1040px; margin-left: auto; margin-right: auto; }
+
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .board.filtered { grid-template-columns: 1fr; max-width: 640px; }
+
+  @media (max-width: 700px) {
+    .board { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-link">前端 / 後端 / PM</a>
+  <a href="vue-nuxt.html" class="nav-link active">Vue + Nuxt</a>
+  <button type="button" id="theme-toggle" class="theme-toggle" title="切換深色模式">🌙</button>
+</nav>
+
+<header>
+  <h1>🌳 Vue + Nuxt 技能樹</h1>
+  <p>Vue 3 / Nuxt 3 兩條路線 · 由基礎到進階</p>
+</header>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-cat="all">全部顯示</button>
+  <button type="button" class="tab" data-cat="vue">Vue</button>
+  <button type="button" class="tab" data-cat="nuxt">Nuxt</button>
+</div>
+
+<div class="board" id="board">
+
+  <!-- VUE COLUMN -->
+  <section class="column" data-cat="vue">
+    <div class="col-head"><span class="col-dot"></span><h2>Vue 3</h2></div>
+    <p class="col-sub">核心語法 → 組合式應用 → 生態系與工具</p>
+
+    <div class="tier">
+      <div class="tier-label">基礎能力</div>
+      <div class="nodes">
+        <div class="node group">
+          <p class="node-title">模板語法 &amp; 指令</p>
+          <div class="skill-list">
+            <span class="skill-item">v-if / v-else</span>
+            <span class="skill-item">v-for</span>
+            <span class="skill-item">v-bind</span>
+            <span class="skill-item">v-on</span>
+            <span class="skill-item">v-model</span>
+            <span class="skill-item">事件修飾符</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">響應式系統</p>
+          <div class="skill-list">
+            <span class="skill-item">ref</span>
+            <span class="skill-item">reactive</span>
+            <span class="skill-item">computed</span>
+            <span class="skill-item">watch</span>
+            <span class="skill-item">watchEffect</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">元件基礎</p>
+          <div class="skill-list">
+            <span class="skill-item">Props / Emits</span>
+            <span class="skill-item">具名 Slots</span>
+            <span class="skill-item">作用域插槽</span>
+            <span class="skill-item">生命週期鉤子</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">Composition API vs Options API</p>
+          <div class="skill-list">
+            <span class="skill-item">&lt;script setup&gt; 語法糖</span>
+            <span class="skill-item">兩種寫法的取捨</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">進階應用</div>
+      <div class="nodes">
+        <div class="node group">
+          <p class="node-title">Composables 設計</p>
+          <div class="skill-list">
+            <span class="skill-item">邏輯抽取與重用</span>
+            <span class="skill-item">命名慣例（use 開頭）</span>
+            <span class="skill-item">provide / inject 依賴注入</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">狀態管理</p>
+          <div class="skill-list">
+            <span class="skill-item">Pinia</span>
+            <span class="skill-item">Vuex（舊）</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">路由</p>
+          <div class="skill-list">
+            <span class="skill-item">Vue Router 基礎</span>
+            <span class="skill-item">動態路由</span>
+            <span class="skill-item">Nested Routes</span>
+            <span class="skill-item">Navigation Guards</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">效能優化</p>
+          <div class="skill-list">
+            <span class="skill-item">v-memo</span>
+            <span class="skill-item">keep-alive</span>
+            <span class="skill-item">defineAsyncComponent</span>
+            <span class="skill-item">Suspense</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">TypeScript 整合</p>
+          <div class="skill-list">
+            <span class="skill-item">defineComponent</span>
+            <span class="skill-item">PropType</span>
+            <span class="skill-item">泛型元件</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">生態系 / 工具</div>
+      <div class="nodes">
+        <div class="node group">
+          <p class="node-title">建構工具</p>
+          <div class="skill-list">
+            <span class="skill-item">Vite</span>
+            <span class="skill-item">Vue CLI（舊）</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">測試</p>
+          <div class="skill-list">
+            <span class="skill-item">Vitest</span>
+            <span class="skill-item">Vue Test Utils</span>
+            <span class="skill-item">Cypress</span>
+            <span class="skill-item">Playwright</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">UI 元件庫</p>
+          <div class="skill-list">
+            <span class="skill-item">Element Plus</span>
+            <span class="skill-item">Vuetify</span>
+            <span class="skill-item">Naive UI</span>
+            <span class="skill-item">PrimeVue</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">開發工具</p>
+          <div class="skill-list">
+            <span class="skill-item">Vue Devtools</span>
+            <span class="skill-item">eslint-plugin-vue</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUXT COLUMN -->
+  <section class="column" data-cat="nuxt">
+    <div class="col-head"><span class="col-dot"></span><h2>Nuxt 3</h2></div>
+    <p class="col-sub">慣例式開發 → 渲染與伺服端 → 模組生態與部署</p>
+
+    <div class="tier">
+      <div class="tier-label">基礎能力</div>
+      <div class="nodes">
+        <div class="node group">
+          <p class="node-title">檔案系統路由</p>
+          <div class="skill-list">
+            <span class="skill-item">pages/ 目錄自動產生路由</span>
+            <span class="skill-item">動態路由 [id].vue</span>
+            <span class="skill-item">巢狀路由</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">佈局系統</p>
+          <div class="skill-list">
+            <span class="skill-item">layouts/ 目錄</span>
+            <span class="skill-item">預設 layout</span>
+            <span class="skill-item">頁面切換 layout</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">自動導入</p>
+          <div class="skill-list">
+            <span class="skill-item">composables/ 自動 import</span>
+            <span class="skill-item">components/ 自動 import</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">資料抓取</p>
+          <div class="skill-list">
+            <span class="skill-item">useFetch</span>
+            <span class="skill-item">useAsyncData</span>
+            <span class="skill-item">$fetch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">渲染 &amp; 伺服端</div>
+      <div class="nodes">
+        <div class="node group">
+          <p class="node-title">渲染模式</p>
+          <div class="skill-list">
+            <span class="skill-item">SSR</span>
+            <span class="skill-item">SSG</span>
+            <span class="skill-item">ISR</span>
+            <span class="skill-item">CSR</span>
+            <span class="skill-item">routeRules 混合渲染</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">Server 端能力（Nitro）</p>
+          <div class="skill-list">
+            <span class="skill-item">server/api 路由</span>
+            <span class="skill-item">Server Middleware</span>
+            <span class="skill-item">defineEventHandler 事件處理</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">狀態管理整合</p>
+          <div class="skill-list">
+            <span class="skill-item">useState</span>
+            <span class="skill-item">Pinia + Nuxt</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">SEO</p>
+          <div class="skill-list">
+            <span class="skill-item">useHead</span>
+            <span class="skill-item">useSeoMeta</span>
+            <span class="skill-item">Sitemap</span>
+            <span class="skill-item">OG Image</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">模組生態 / 部署</div>
+      <div class="nodes">
+        <div class="node group">
+          <p class="node-title">常用模組</p>
+          <div class="skill-list">
+            <span class="skill-item">@nuxt/image</span>
+            <span class="skill-item">@nuxt/content</span>
+            <span class="skill-item">@pinia/nuxt</span>
+            <span class="skill-item">@nuxtjs/tailwindcss</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">部署 &amp; Nitro Presets</p>
+          <div class="skill-list">
+            <span class="skill-item">Vercel</span>
+            <span class="skill-item">Netlify</span>
+            <span class="skill-item">Cloudflare Workers</span>
+            <span class="skill-item">Node Server</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">效能與快取</p>
+          <div class="skill-list">
+            <span class="skill-item">Nitro 快取策略</span>
+            <span class="skill-item">ISR 設定</span>
+            <span class="skill-item">Payload 縮減</span>
+            <span class="skill-item">Hydration 優化</span>
+          </div>
+        </div>
+        <div class="node group">
+          <p class="node-title">全端能力</p>
+          <div class="skill-list">
+            <span class="skill-item">API 路由設計</span>
+            <span class="skill-item">驗證（Auth）</span>
+            <span class="skill-item">資料庫整合（Prisma / Drizzle）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>前端工程師 & PM 技能樹</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .site-nav, header, .tabs, .board { max-width: 1560px; margin-left: auto; margin-right: auto; }
+
+    .board {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .board.filtered {
+      grid-template-columns: 1fr;
+      max-width: 720px;
+    }
+
+    @media (max-width: 1400px) {
+      .board {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .board {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-link active">前端 / 後端 / PM</a>
+    <a href="vue-nuxt.html" class="nav-link">Vue + Nuxt</a>
+    <button type="button" id="theme-toggle" class="theme-toggle" title="切換深色模式">🌙</button>
+  </nav>
+
+  <header>
+    <h1>🌳 前端 / 後端工程師 &amp; PM 技能樹</h1>
+    <p>JavaScript / CSS / Backend / PM 四條路線 · 由基礎到進階</p>
+  </header>
+
+  <div class="tabs">
+    <button type="button" class="tab active" data-cat="all">全部顯示</button>
+    <button type="button" class="tab" data-cat="js">JavaScript</button>
+    <button type="button" class="tab" data-cat="css">CSS</button>
+    <button type="button" class="tab" data-cat="be">Backend</button>
+    <button type="button" class="tab" data-cat="pm">PM</button>
+  </div>
+
+  <div class="board" id="board">
+
+    <!-- JS COLUMN -->
+    <section class="column" data-cat="js">
+      <div class="col-head"><span class="col-dot"></span>
+        <h2>JavaScript</h2>
+      </div>
+      <p class="col-sub">語言核心 → 框架生態 → 工程化</p>
+
+      <div class="tier">
+        <div class="tier-label">基礎能力</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">ES6+ 語法</p>
+            <p class="node-desc">let/const、箭頭函式、解構、展開運算子、模組化 import/export</p>
+          </div>
+          <div class="node">
+            <p class="node-title">非同步處理</p>
+            <p class="node-desc">Promise、async/await、事件迴圈、微任務/巨集任務</p>
+          </div>
+          <div class="node">
+            <p class="node-title">DOM / BOM</p>
+            <p class="node-desc">DOM 操作、事件委派、瀏覽器 API（localStorage、fetch）</p>
+          </div>
+          <div class="node">
+            <p class="node-title">核心觀念</p>
+            <p class="node-desc">閉包、原型鏈、this 綁定、記憶體管理</p>
+          </div>
+          <div class="node">
+            <p class="node-title">TypeScript</p>
+            <div class="chips"><span class="chip">型別系統</span><span class="chip">interface/type</span><span
+                class="chip">泛型</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">框架 / 生態系</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">框架選擇</p>
+            <div class="chips">
+              <span class="chip">React</span><span class="chip">Vue 3</span>
+              <span class="chip">Next.js</span><span class="chip">Nuxt</span>
+              <span class="chip">Svelte</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">狀態管理</p>
+            <div class="chips">
+              <span class="chip">Redux Toolkit</span><span class="chip">Zustand</span>
+              <span class="chip">Pinia</span><span class="chip">Recoil / Jotai</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">資料請求 / 快取</p>
+            <div class="chips">
+              <span class="chip">TanStack Query</span><span class="chip">SWR</span>
+              <span class="chip">Axios</span><span class="chip">GraphQL / Apollo</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">實用工具庫</p>
+            <div class="chips">
+              <span class="chip">Lodash</span><span class="chip">Day.js</span><span class="chip">date-fns</span>
+              <span class="chip">Zod / Yup</span><span class="chip">RxJS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">工程化 / 進階</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">建構工具</p>
+            <div class="chips">
+              <span class="chip">Vite</span><span class="chip">Webpack</span>
+              <span class="chip">esbuild</span><span class="chip">Rollup / Turbopack</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">測試</p>
+            <div class="chips">
+              <span class="chip">Jest / Vitest</span><span class="chip">Testing Library</span>
+              <span class="chip">Playwright / Cypress</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">品質 &amp; 效能</p>
+            <div class="chips">
+              <span class="chip">ESLint / Prettier</span><span class="chip">Code Splitting</span>
+              <span class="chip">Web Workers</span><span class="chip">SSR/SSG 概念</span>
+            </div>
+          </div>
+          <div class="node group">
+            <p class="node-title">網站架構 &amp; SEO</p>
+            <div class="skill-list">
+              <span class="skill-item">網站資訊架構（IA）設計</span>
+              <span class="skill-item">URL / 路由結構</span>
+              <span class="skill-item">sitemap.xml</span>
+              <span class="skill-item">robots.txt</span>
+              <span class="skill-item">Meta 標籤 / Open Graph</span>
+              <span class="skill-item">結構化資料（Schema.org）</span>
+              <span class="skill-item">Core Web Vitals</span>
+              <span class="skill-item">GTM（Google Tag Manager）</span>
+              <span class="skill-item">GA4（Google Analytics 4）</span>
+              <span class="skill-item">GSC（Google Search Console）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CSS COLUMN -->
+    <section class="column" data-cat="css">
+      <div class="col-head"><span class="col-dot"></span>
+        <h2>CSS</h2>
+      </div>
+      <p class="col-sub">版面配置 → 樣式方法論 → 動效與元件庫</p>
+
+      <div class="tier">
+        <div class="tier-label">基礎能力</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">版面配置</p>
+            <p class="node-desc">Flexbox、Grid、Box Model、定位（position）</p>
+          </div>
+          <div class="node">
+            <p class="node-title">RWD 響應式設計</p>
+            <p class="node-desc">Media Query、行動優先設計、相對單位（rem/vw/%）、aspect-ratio</p>
+          </div>
+          <div class="node">
+            <p class="node-title">CSS 變數 &amp; 主題</p>
+            <p class="node-desc">Custom Properties、Dark Mode、Design Tokens</p>
+          </div>
+          <div class="node">
+            <p class="node-title">動畫 &amp; 轉場</p>
+            <p class="node-desc">Transition、Keyframes Animation、Transform</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">方法論 / 預處理器</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">CSS 架構方法論</p>
+            <div class="chips">
+              <span class="chip">BEM</span><span class="chip">ITCSS</span><span class="chip">Atomic CSS</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">預處理器 / 後處理器</p>
+            <div class="chips">
+              <span class="chip">Sass / SCSS</span><span class="chip">Less</span><span class="chip">PostCSS</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">CSS-in-JS</p>
+            <div class="chips">
+              <span class="chip">Styled-components</span><span class="chip">Emotion</span>
+              <span class="chip">CSS Modules</span><span class="chip">Vanilla Extract</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">框架 / 元件庫 / 進階</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">CSS 框架</p>
+            <div class="chips">
+              <span class="chip">Tailwind CSS</span><span class="chip">UnoCSS</span><span class="chip">Bootstrap</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">UI 元件庫</p>
+            <div class="chips">
+              <span class="chip">shadcn/ui</span><span class="chip">Ant Design</span>
+              <span class="chip">Material UI</span><span class="chip">Chakra UI</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">進階動效 &amp; 版面</p>
+            <div class="chips">
+              <span class="chip">Framer Motion</span><span class="chip">GSAP</span>
+              <span class="chip">Container Queries</span><span class="chip">CSS Layers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKEND COLUMN -->
+    <section class="column" data-cat="be">
+      <div class="col-head"><span class="col-dot"></span>
+        <h2>Backend</h2>
+      </div>
+      <p class="col-sub">語言與 API → 框架與資料層 → 部署與系統設計</p>
+
+      <div class="tier">
+        <div class="tier-label">基礎能力</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">程式語言</p>
+            <div class="chips">
+              <span class="chip">Node.js</span><span class="chip">Python</span>
+              <span class="chip">Java</span><span class="chip">Go</span><span class="chip">PHP</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">API 設計</p>
+            <p class="node-desc">RESTful API、HTTP 狀態碼與方法、GraphQL、gRPC</p>
+          </div>
+          <div class="node">
+            <p class="node-title">資料庫基礎</p>
+            <p class="node-desc">SQL 基礎語法、正規化、Schema / ER 設計、索引概念</p>
+          </div>
+          <div class="node">
+            <p class="node-title">認證與授權</p>
+            <div class="chips">
+              <span class="chip">JWT</span><span class="chip">OAuth2</span><span class="chip">Session / Cookie</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">框架 / 資料層</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">後端框架</p>
+            <div class="chips">
+              <span class="chip">Express</span><span class="chip">NestJS</span>
+              <span class="chip">Django / Flask</span><span class="chip">Spring Boot</span>
+              <span class="chip">FastAPI</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">ORM / 資料庫工具</p>
+            <div class="chips">
+              <span class="chip">Prisma</span><span class="chip">TypeORM</span>
+              <span class="chip">SQLAlchemy</span><span class="chip">Mongoose</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">資料庫</p>
+            <div class="chips">
+              <span class="chip">PostgreSQL</span><span class="chip">MySQL</span>
+              <span class="chip">MongoDB</span><span class="chip">Redis</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">訊息佇列</p>
+            <div class="chips">
+              <span class="chip">RabbitMQ</span><span class="chip">Kafka</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">部署 / 系統設計</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">容器化 &amp; CI/CD</p>
+            <div class="chips">
+              <span class="chip">Docker</span><span class="chip">Kubernetes</span>
+              <span class="chip">GitHub Actions</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">雲端服務</p>
+            <div class="chips">
+              <span class="chip">AWS</span><span class="chip">GCP</span>
+              <span class="chip">Azure</span><span class="chip">Serverless</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">系統設計</p>
+            <p class="node-desc">微服務架構、負載平衡、快取策略、水平擴展</p>
+          </div>
+          <div class="node">
+            <p class="node-title">監控 &amp; 安全</p>
+            <div class="chips">
+              <span class="chip">ELK</span><span class="chip">Prometheus / Grafana</span>
+              <span class="chip">OWASP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PM COLUMN -->
+    <section class="column" data-cat="pm">
+      <div class="col-head"><span class="col-dot"></span>
+        <h2>PM 產品經理</h2>
+      </div>
+      <p class="col-sub">核心思維 → 執行方法 → 工具與軟實力</p>
+
+      <div class="tier">
+        <div class="tier-label">核心能力</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">需求探索</p>
+            <p class="node-desc">用戶研究、訪談、痛點挖掘、需求文件（PRD）撰寫</p>
+          </div>
+          <div class="node">
+            <p class="node-title">產品規劃</p>
+            <p class="node-desc">產品願景、Roadmap 規劃、市場 / 競品分析</p>
+          </div>
+          <div class="node">
+            <p class="node-title">優先級判斷</p>
+            <div class="chips">
+              <span class="chip">RICE</span><span class="chip">MoSCoW</span><span class="chip">Kano Model</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">商業思維</p>
+            <p class="node-desc">商業模式、成本效益分析、North Star Metric 訂定</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">執行方法</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">專案管理方法論</p>
+            <div class="chips">
+              <span class="chip">Agile / Scrum</span><span class="chip">Kanban</span>
+              <span class="chip">Sprint 規劃</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">跨部門協作</p>
+            <p class="node-desc">與工程 / 設計 / 業務溝通、利害關係人管理、會議引導</p>
+          </div>
+          <div class="node">
+            <p class="node-title">數據驅動決策</p>
+            <div class="chips">
+              <span class="chip">A/B 測試</span><span class="chip">漏斗分析</span>
+              <span class="chip">GA4 / Amplitude / Mixpanel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-label">工具 / 軟實力</div>
+        <div class="nodes">
+          <div class="node">
+            <p class="node-title">常用工具</p>
+            <div class="chips">
+              <span class="chip">Jira</span><span class="chip">Confluence</span>
+              <span class="chip">Notion</span><span class="chip">Figma</span>
+            </div>
+          </div>
+          <div class="node">
+            <p class="node-title">軟實力</p>
+            <div class="chips">
+              <span class="chip">領導力</span><span class="chip">談判技巧</span>
+              <span class="chip">簡報表達</span><span class="chip">同理心</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
